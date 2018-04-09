@@ -1,0 +1,40 @@
+package:
+  name: bmi_wrap
+  version: 0.1
+
+source:
+  fn: bmi_wrap-0.1.tar.gz
+  url: https://github.com/csdms/bmi_wrap/archive/v0.1.tar.gz
+
+requirements:
+  build:
+    - setuptools
+    - python
+  run:
+    - {{ compiler("c") }}
+    - {{ compiler("cxx") }}
+    - python
+    - cython
+    - numpy 1.11.*
+    - pyyaml
+    - jinja2
+    - cookiecutter
+    - six
+    - scripting
+
+test:
+  imports:
+    - bmi_wrap
+  commands:
+    - bmi-wrap -h
+
+build:
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+
+about:
+  home: https://github.com/csdms/bmi_wrap
+  license: MIT
+  license_file: LICENSE
+  summary: Summary of the project
+  dev_url: https://github.com/csdms/bmi_wrap
