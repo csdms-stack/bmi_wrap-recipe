@@ -14,7 +14,6 @@ requirements:
   run:
     - {{ compiler("c") }}
     - {{ compiler("cxx") }}
-    - python
     - cython
     - numpy 1.11.*
     - pyyaml
