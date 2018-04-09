@@ -11,6 +11,7 @@ env:
   global:
   - CONDA_PREFIX=$HOME/miniconda
   - MINICONDA_URL_BASE="https://repo.continuum.io/miniconda/Miniconda3-latest"
+  - secure: LTVfTvAhdFeNYtnxvCsnPQSfwB+rH3E4IdWUzHzRjFZHgmCNcBP6Sgw9bJsl8rCr1X6mBAXSiUl5T9TFAFqwZTwmWwVCQPcPZaMNLPZFgn2Z9bMpZfbi2L3OgoCXZ+JbDKrPJANEW3SQXzOI8kfTHdc118g2muLV1THYmnMOjLsRNnDBBqrI+V4eY4ooqWJ5jy8bBteo9vB1Sv+qlSsKCfUmYkKptZw4xJ8sgzq/OpHm50rGPc4NOq6mI3KegL/yW3swsW2fCNlB/5grmAAj7/zDG4px7BgBWZxdHc5LkBIYknuseGzrOX91ix6YKTsigf1Pka2Q/pIdaPTUmUD4YSRn12s/+G3k8zupjnFNSvpxs8kX4WZLtzhJA5joa170KoABia2f6ZnpegZslWgc58lZEviOuNMKkEWR8snaAl8SUCgCI47R7mONK8L/oxEA3jE6o+BJGud2owQc0iRQtdByfVOukzw0SDqj72CB2TBfM7xiZoEy6gvWUTRVinIYtIjLflFYg31HImY4LOCNb1QzkcEeF0XCHZBfik04ZQA7PAdHdAdlCOIJNvVPWlGfIJBCeJxHEG+dL6yVQbntb2PnDCQM4Iv+eRNFDG6QsWu++8/dXUN4Atohvo83Z1PrN5YGV1MeAWbPchq4oj+RWlNqfs+56k2j2tHXlPi6nJE=
 sudo: false
 before_install:
 - |
@@ -39,4 +40,5 @@ script:
 after_success:
 - curl https://raw.githubusercontent.com/csdms/ci-tools/master/anaconda_upload.py
   > $HOME/anaconda_upload.py
-- echo $ANACONDA_TOKEN | python $HOME/anaconda_upload.py ./recipe --channel=main --org=csdms-stack --token=-
+- echo $ANACONDA_TOKEN | python $HOME/anaconda_upload.py ./recipe --channel=main --org=csdms-stack
+  --token=-
