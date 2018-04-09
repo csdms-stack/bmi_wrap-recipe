@@ -9,6 +9,7 @@ source:
 requirements:
   build:
     - setuptools
+  host:
     - python
   run:
     - {{ compiler("c") }}
