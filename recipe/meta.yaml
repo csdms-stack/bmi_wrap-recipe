@@ -1,21 +1,18 @@
 package:
   name: bmi_wrap
-  version: 0.1
+  version: 0.1.1
 
 source:
-  fn: bmi_wrap-0.1.tar.gz
-  url: https://github.com/csdms/bmi_wrap/archive/v0.1.tar.gz
+  fn: bmi_wrap-0.1.1.tar.gz
+  url: https://github.com/csdms/bmi_wrap/archive/v0.1.1.tar.gz
 
 requirements:
   build:
     - setuptools
-  host:
     - python
+
   run:
-    - {{ compiler("c") }}
-    - {{ compiler("cxx") }}
-    - cython
-    - numpy 1.11.*
+    - python
     - pyyaml
     - jinja2
     - cookiecutter
