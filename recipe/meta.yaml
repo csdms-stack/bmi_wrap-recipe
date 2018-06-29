@@ -3,8 +3,11 @@ package:
   version: 0.1.2
 
 source:
-  fn: bmi_wrap-0.1.2.tar.gz
-  url: https://github.com/csdms/bmi_wrap/archive/v0.1.2.tar.gz
+  # path: /Users/huttone/git/csdms/bmi_wrap
+  # fn: bmi_wrap-0.1.2.tar.gz
+  # url: https://github.com/csdms/bmi_wrap/archive/v0.1.2.tar.gz
+  git_url: https://github.com/csdms/bmi_wrap
+  git_branch: mcflugen/fix-install-issues
 
 requirements:
   build:
@@ -26,7 +29,7 @@ test:
     - bmi-wrap -h
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 about:
