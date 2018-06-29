@@ -29,7 +29,7 @@ test:
     - bmi-wrap -h
 
 build:
-  number: 1
+  number: 2
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 about:
